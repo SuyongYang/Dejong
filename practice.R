@@ -42,12 +42,15 @@ ts.plot(acad[,1])
 # same with plot(acad[,1],type='l')
 hist(density(as.numeric(acad[,1])))
 class(acad[,1])
-hist(acad[,1],breaks = seq(range(acad[,1])[1],range(acad[,1])[1],by=.01))
+hist(acad[,1],breaks = seq(range(acad[,1])[1],range(acad[,1])[1],by=.01),freq=F)
+lines(density(acad[,1]))
 
 # correlations
-matcor(psych, acad)
 
+matcor(psych, acad)
 cc1 <- cc(psych, acad)
+
+?cc()
 
 # display the canonical correlations
 cc1$co
